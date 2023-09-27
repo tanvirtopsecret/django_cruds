@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %} Single Profile Page {% endblock %}
+
+{% block body %}
+<div class="card" style="margin-top: 10%;">
+    <img src="{{prof.image.url}}" alt="John" style="width:auto; height: 250px;">
+    <h1>{{prof.name}}</h1>
+    <p class="title">{{prof.email}}</p>
+    <p>{{prof.phone_number}}</p>
+    <div style="margin: 24px 0;">
+      <a href="#"><i class="fa fa-dribbble"></i></a> 
+      <a href="#"><i class="fa fa-twitter"></i></a>  
+      <a href="#"><i class="fa fa-linkedin"></i></a>  
+      <a href="#"><i class="fa fa-facebook"></i></a> 
+    </div>
+    <p> 
+        <a href="{% url 'update_page' prof.id %}"><button style="background-color: black; width: 100px;">Update</button> </a>
+        <br>
+        <a href="{% url 'delete' prof.id %}"><button style="background-color: red; width: 100px; margin-top: 5px;">Delete</button></a>
+    </p>
+  </div>
+{% endblock %}
